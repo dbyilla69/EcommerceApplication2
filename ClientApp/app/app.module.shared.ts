@@ -7,13 +7,28 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './components/app/app.component';
 import { NavMenuComponent } from './components/navmenu/navmenu.component';
 import { HomeComponent } from './components/home/home.component';
+import { ProductViewComponent } from './components/product-view/product-view.component';
+import { ProductFormComponent } from './components/product-form/product-form.component';
+import { ProductDetailComponent } from './components/product-detail/product-detail.component';
+import { CustomerViewComponent } from './components/customer-view/customer-view.component';
+import { ShoppingCartViewComponent } from './components/shopping-cart-view/shopping-cart-view.component';
+
+import { ProductService } from './services/product.service';
+import { PictureService } from './services/picture.service';
+
+
 
 
 @NgModule({
     declarations: [
         AppComponent,
         NavMenuComponent,
-        HomeComponent
+        HomeComponent,
+        ProductViewComponent,
+        ProductFormComponent,
+        ProductDetailComponent,
+        CustomerViewComponent,
+        ShoppingCartViewComponent
     ],
     imports: [
         CommonModule,
@@ -21,9 +36,18 @@ import { HomeComponent } from './components/home/home.component';
         FormsModule,
         RouterModule.forRoot([
             { path: '', redirectTo: 'home', pathMatch: 'full' },
+            { path: 'products/new', component: ProductFormComponent },
+            { path: 'products/:id', component: ProductDetailComponent },
+            { path: 'products', component: ProductViewComponent },
+            { path: 'customers', component: CustomerViewComponent },
+            { path: 'shoppings', component: ShoppingCartViewComponent },
             { path: 'home', component: HomeComponent },
             { path: '**', redirectTo: 'home' }
         ])
+    ],
+    providers: [
+        ProductService,
+        PictureService
     ]
 })
 export class AppModuleShared {

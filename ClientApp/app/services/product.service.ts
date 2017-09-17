@@ -7,14 +7,15 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class ProductService {
 
+
   constructor(private http: Http) { }
 
-  create(product) {
+  create(product:any) {
     return this.http.post('/api/products', product)
       .map(res => res.json());
   }
 
- getProduct(id) {
+ getProduct(id:any) {
     return this.http.get('/api/products/' + id)
       .map(res => res.json());
   }
@@ -29,7 +30,7 @@ export class ProductService {
       .map(res => res.json());
   }
 
-  delete(id) {
+  delete(id:any) {
     return this.http.delete('/api/products/' + id)
       .map(res => res.json());
   }

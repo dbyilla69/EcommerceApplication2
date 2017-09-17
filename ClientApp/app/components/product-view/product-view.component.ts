@@ -35,11 +35,11 @@ export class ProductViewComponent implements OnInit {
       this.products = products;
       });
   }
-  uploadPicture(){
-      var nativeElement: HTMLInputElement = this.fileInput.nativeElement;
+  // uploadPicture(){
+  //     var nativeElement: HTMLInputElement = this.fileInput.nativeElement;
 
-      this.pictureService.upload(this.productId, nativeElement.files[0])
-      .subscribe(x => console.log(x));
-  }
+  //     this.pictureService.upload(this.productId, nativeElement.files[0])
+  //     .subscribe(x => console.log(x));
+  // }
 
 }
