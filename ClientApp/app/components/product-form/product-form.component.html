@@ -1,0 +1,86 @@
+<div class="row m-t-30">
+    <div class="col-md-12">
+        <div class="panel panel-info">
+            <div class="panel-heading"> Create Product</div>
+             <p>{{ product | json}}</p>
+            <div class="panel-wrapper" aria-expanded="true">
+                <div class="panel-body">
+                    <form #f="ngForm" (ngSubmit)="submit()" >
+                          {{diagnostic}}
+                        <div class="form-body">
+                            <h3 class="box-title">Create Product</h3>
+                            <hr>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label">Product Name</label>
+                                        <input type="text" id="productName" class="form-control"  [(ngModel)]="product.productName" name="productName" #productName="ngModel">
+                                    </div>
+                                </div>
+                                <!--/span-->
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label">Unit Price</label>
+                                        <input type="text" id="unitPrice" class="form-control"  [(ngModel)]="product.unitPrice" name="unitPrice" #unitPrice="ngModel">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label">Unit In Stock</label>
+                                        <input type="text" id="unitStock" class="form-control" [(ngModel)]="product.unitsInStock" name="unitStock" #productName="ngModel">
+
+                                    </div>
+                                </div>
+                            </div>
+                           
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label">Category</label>
+                                        <select id="category" class="form-control" (change)="onCategoryChange()" [(ngModel)]="product.categoryId" name="categoryId"  #category="ngModel">
+                                            <option value=""></option>
+                                            <option  *ngFor="let c of categories"value="{{c.id}}">{{c.name}}</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="subCategory">Sub Category</label>
+                                        <select id="subCategory" class="form-control" [(ngModel)]="product.subCategoryId" name="subCategoryId"  #subCategory="ngModel">
+                                            <option value=""></option>
+                                            <option *ngFor="let c of subCategories" value="{{c.id}}">{{c.name}}</option>
+                                        </select>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--/row-->
+
+                            <h3 class="box-title m-t-30">Product Detail</h3>
+
+                            <div class="row">
+                                <div class="col-md-12 ">
+                                    <div class="form-group">
+
+                                        <textarea id="productDetailId"class="form-control" rows="4" [(ngModel)]="product.details" name="productDetailId"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--/row-->
+                            <hr>
+                        </div>
+                        <div class="form-actions m-t-30">
+                            <button type="submit" class="btn btn-success"> <i class="fa fa-check"></i> Save</button>
+                            <button type="button" class="btn btn-default">Cancel</button>
+                        </div> 
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

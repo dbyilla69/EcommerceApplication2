@@ -1,0 +1,50 @@
+<div class='panel panel-primary'>
+        <p>
+  <a [routerLink]="['/products/new']" class="btn btn-primary">New Product</a>
+</p>
+    <div class='panel-heading'>
+        {{pageTitle}}
+    </div>
+
+    <div class='panel-body'>
+        <!-- <div class='row'>
+            <div class='col-md-2'>Filter by:</div>
+            <div class='col-md-4'>
+                <input type='text' [(ngModel)]='listFilter' />
+            </div>
+        </div> -->
+        <!-- <div class='row'>
+            <div class='col-md-6'>
+                <h3>Filtered by: {{listFilter}} </h3>
+            </div>
+        </div> -->
+        <div class='table-responsive'>
+            <table class='table' *ngIf='products && products.length'>
+                <thead>
+                    <tr>
+                        <th>Product Name</th>
+                        <th>Unit Price</th>
+                        <th>Unit In Stock</th>
+                        <!-- <th>Category</th>
+                        <th>SubCategory</th> -->
+                        <th>Product Details</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor='let product of products'>
+                        <td>{{product.productName}}</td>
+                        <td>{{ product.unitPrice  |currency:'USD':true}}</td>
+                        <td>{{ product.unitsInStock }}</td>
+                        <td>{{ product.details }}</td>
+                        <td>
+                        <a [routerLink]="['/products/', product.id]">View</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<li [routerLinkActive]="['link-active']">
+                    <a [routerLink]="['/products']">

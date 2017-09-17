@@ -1,0 +1,11 @@
+<div
+*ngFor="let p of pictures"
+class="card" style="width: 20rem;">
+  <img class="card-img-top" src="/uploads/{{p.fileName}}" alt="Card image cap">
+  <div class="card-body">
+    <h4 class="card-title">{{p.productName}}</h4>
+    <p class="card-text">{{p.price | currency: 'USD':true}}</p>
+    <a href="#" class="btn btn-primary">Add to Cart</a>
+  </div>
+</div>
+

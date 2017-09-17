@@ -1,0 +1,42 @@
+<h1>Product</h1>
+<div>
+
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#basic" aria-controls="basic" role="tab" data-toggle="tab">Product</a></li>
+        <li role="presentation"><a href="#pictures" aria-controls="pictures" role="tab" data-toggle="tab">Pictures</a></li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content" *ngIf="product">
+        <!-- Product tab -->
+        <div role="tabpanel" class="tab-pane active" id="basic">
+            <h2>Product Info</h2>
+            <ul>
+                <li>Name:{{product.productName}}</li>
+                <li>Price:{{product.unitPrice}}</li>
+                <li>Description:{{product.unitsInStock}}</li>
+                <li>Availability:{{product.details}}</li>
+            </ul>
+        </div>
+        <!-- Picture Tab -->
+        <div role="tabpanel" class="tab-pane" id="pictures">
+            <h2>Pictures</h2>
+            <input type="file" (change)="uploadPicture()" #fileInput>
+            <img *ngFor="let picture of pictures" src="/uploads/{{ picture.fileName }}" class="img-thumbnail">
+
+        </div>
+    </div>
+     <div class='panel-footer'>
+            <a class='btn btn-default' (click)='onBack()' style='width:80px' [routerLink]="['/products/']">
+            <i class='glyphicon glyphicon-chevron-left'></i> Back
+        </a>
+        </div> 
+</div>
+
+
+
+
+
+ 
+ 
