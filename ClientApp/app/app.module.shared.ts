@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
+import { MaterialModule } from '@angular/material';
+
 
 import { AppComponent } from './components/app/app.component';
 import { NavMenuComponent } from './components/navmenu/navmenu.component';
@@ -29,10 +31,12 @@ import { PictureService } from './services/picture.service';
         ProductDetailComponent,
         CustomerViewComponent,
         ShoppingCartViewComponent
+
     ],
     imports: [
         CommonModule,
         HttpModule,
+        MaterialModule,
         FormsModule,
         RouterModule.forRoot([
             { path: '', redirectTo: 'home', pathMatch: 'full' },
