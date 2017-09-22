@@ -2,28 +2,29 @@
 <div class="row">
     <div *ngFor="let product of pictures">
         <div class="col-xs-4 padding-10">
-            <md-card class="card-container-phone">
-                <md-card-header>
-                    <div md-card-avatar class="example-header-image"></div>
-                    <md-card-title>
-                        <span class="badge">{{product.id}}</span> <strong>{{product.productName}}</strong>
-                    </md-card-title>
-                </md-card-header>
+<md-card class="example-card">
+    <md-card-header>
+        <div md-card-avatar class="example-header-image"></div>
+        <md-card-title>
+            <span class="badge"></span> <strong>{{product.productName}}</strong>
+        </md-card-title>
+    </md-card-header>
+    <img md-card-image src="/uploads/{{ product.fileName }}" alt="Picture">
+    <md-card-content>
+        <md-card-actions>
+            <!-- <div style="display: flex">
+                <span class="padding-right-5">Quantity: </span>
+                <input type="number" [(ngModel)]="quantity">
+            </div> -->
+            <h1 class="badge">${{product.price}}</h1>
+            <button (click)="addToCart(product)" class="btn btn-sm btn-primary">Add to Cart</button>
+            <button (click)="clickedProduct(product)" class="btn btn-sm btn-success">Details</button>
+        </md-card-actions>
+    </md-card-content>
+    <md-card-actions>
 
-                <img width="220" height="220" class="image-align-center padding-bottom-10" src={{product.src}} />
-                <md-card-content>
-                <p>{{product.info}}</p>
-                </md-card-content>
-                <md-card-actions>
-                    <!-- <div style="display: flex">
-                        <span class="padding-right-5">Quantity: </span>
-                        <input type="number" [(ngModel)]="quantity">
-                    </div> -->
-                    <h1 class="badge">${{product.price}}</h1>
-                    <button (click)="addToCart(product)" class="btn btn-sm btn-primary">Add to Cart</button>
-                    <button (click)="clickedProduct(product)" class="btn btn-sm btn-success">Details</button>
-                </md-card-actions>
-            </md-card>
-        </div>
-    </div>
+    </md-card-actions>
+  </md-card>
+</div>
+</div>
 </div>
