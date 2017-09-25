@@ -2,14 +2,14 @@
 <div class="row">
     <div *ngFor="let product of pictures">
         <div class="col-xs-4 padding-10">
-<md-card class="example-card">
+<md-card class="example-card" >
     <md-card-header>
         <div md-card-avatar class="example-header-image"></div>
         <md-card-title>
             <span class="badge"></span> <strong>{{product.productName}}</strong>
         </md-card-title>
     </md-card-header>
-    <img md-card-image src="/uploads/{{ product.fileName }}" alt="Picture">
+    <img md-card-image  src="/uploads/{{ product.fileName }}" alt="Picture" style="height: 26rem">
     <md-card-content>
         <md-card-actions>
             <!-- <div style="display: flex">
