@@ -47,13 +47,13 @@ namespace EcommerceApplication2.Controllers
             return mapper.Map<IEnumerable<Picture>, IEnumerable<ProductPictureResource>>(pictures);
         }
 
-        // [HttpGet("api/pictures")]
-        // public async Task<IEnumerable<PictureResource>> GetAllPictures(int productId)
-        // {
-        //     var pictures = await pictureRepository.GetAllPictures();
+        [HttpGet("{productId}")]
+        public async Task<IEnumerable<PictureResource>> GetAllPictures(int productId)
+        {
+            var pictures = await pictureRepository.GetPictures(productId);
 
-        //     return mapper.Map<IEnumerable<Picture>, IEnumerable<PictureResource>>(pictures);
-        // }
+            return mapper.Map<IEnumerable<Picture>, IEnumerable<PictureResource>>(pictures);
+        }
 
 
         [HttpPost("{productId}")]

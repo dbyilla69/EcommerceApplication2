@@ -8,6 +8,7 @@ namespace EcommerceApplication2.Service.Interface
     {
         Task<IEnumerable<Picture>> GetPictures();
         //Task<IEnumerable<Picture>> GetAllPictures();
+        Task<IEnumerable<Picture>> GetPictures(int productId);
 
     }
 }

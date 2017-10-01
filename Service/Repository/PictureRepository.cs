@@ -28,9 +28,14 @@ namespace EcommerceApplication2.Service.Repository
         }
 
 
+        public async Task<IEnumerable<Picture>> GetPictures(int productId)
+        {
+            return await context.Pictures
+              .Where(p => p.ProductId == productId)
+              .ToListAsync();
+        }
 
-
-            public async Task<IEnumerable<Product>> GetAll()
+        public async Task<IEnumerable<Product>> GetAll()
         {
             return await context.Products
             .Include(x => x.SubCategory)
