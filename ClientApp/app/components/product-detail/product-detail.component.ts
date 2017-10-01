@@ -45,7 +45,7 @@ export class ProductDetailComponent implements OnInit {
   uploadPicture() {
     var nativeElement: HTMLInputElement = this.fileInput.nativeElement;
 
-    this.pictureService.upload(this.productId, nativeElement.files)
+    this.pictureService.upload(this.productId, this.fileInput.nativeElement.files[0])
       .subscribe(picture => {
         this.pictures.push(picture);
       });
