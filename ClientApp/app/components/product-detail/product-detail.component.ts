@@ -33,7 +33,7 @@ export class ProductDetailComponent implements OnInit {
 
 
   ngOnInit() {
-        this.pictureService.getPictures(this.productId)
+    this.pictureService.getPictures(this.productId)
       .subscribe(pictures => this.pictures = pictures);
 
     this.productService.getProduct(this.productId).subscribe(p => {
@@ -42,11 +42,13 @@ export class ProductDetailComponent implements OnInit {
     });
   }
 
-  // uploadPicture() {
-  //   var nativeElement: HTMLInputElement = this.fileInput.nativeElement;
+  uploadPicture() {
+    var nativeElement: HTMLInputElement = this.fileInput.nativeElement;
 
-  //   this.pictureService.upload(this.productId, nativeElement.files[0])
-  //     .subscribe(x => console.log(x));
-  // }
+    this.pictureService.upload(this.productId, nativeElement.files)
+      .subscribe(picture => {
+        this.pictures.push(picture);
+      });
+  }
 
 }
