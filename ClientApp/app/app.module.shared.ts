@@ -17,6 +17,8 @@ import { ShoppingCartViewComponent } from './components/shopping-cart-view/shopp
 
 import { ProductService } from './services/product.service';
 import { PictureService } from './services/picture.service';
+import { ShoppingCartService } from './services/shopping-cart.service';
+
 
 
 
@@ -51,7 +53,8 @@ import { PictureService } from './services/picture.service';
     ],
     providers: [
         ProductService,
-        PictureService
+        PictureService,
+        ShoppingCartService
     ]
 })
 export class AppModuleShared {
