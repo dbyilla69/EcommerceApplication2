@@ -9,10 +9,12 @@ import { PictureService } from '../../services/picture.service';
 })
 export class ShoppingCartViewComponent implements OnInit {
   pictures: any;
+  product:any;
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private pictureService:PictureService
+    private pictureService:PictureService,
+    //private cartService: ShoppingCartService;
     ) {
 
     //add api here to get product with id
@@ -22,6 +24,10 @@ export class ShoppingCartViewComponent implements OnInit {
     this.pictureService.getAllPicture().subscribe(p => {
       this.pictures = p;
       });
+  }
+
+  addToCart(){
+    //this.cartservice.addToCart(this.product);
   }
 
 }
