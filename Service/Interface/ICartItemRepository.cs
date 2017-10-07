@@ -12,6 +12,8 @@ namespace EcommerceApplication2.Service.Interface
 
         void Insert(CartItem cart);//Insert & Add the samething
 
+        void Remove(CartItem cart);
+
         //void Update(CartItem cart);//Look up async update/edit
 
         // void Delete(int id); look into Deleting a certain ID that is async

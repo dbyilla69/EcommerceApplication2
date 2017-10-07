@@ -16,6 +16,7 @@ namespace EcommerceApplication2.Service.Repository
             this.context = context;
 
         }
+        //MIGHT NEED TO LOOK INTO THIS FOR FUTURE IMPLENTATION OF DELETE
         // public void Delete(int id)
         // {
         //     var cartItem = GetById(id);
@@ -36,6 +37,11 @@ namespace EcommerceApplication2.Service.Repository
         public void Insert(CartItem cart)
         {
              context.CartItems.Add(cart);
+        }
+        
+        public void Remove(CartItem cart)
+        {
+            context.CartItems.Remove(cart);
         }
 
         // public void Update(CartItem cart)
