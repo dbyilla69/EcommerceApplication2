@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using EcommerceApplication2.DataContext;
 using EcommerceApplication2.Entities;
@@ -42,6 +43,17 @@ namespace EcommerceApplication2.Service.Repository
         public void Remove(CartItem cart)
         {
             context.CartItems.Remove(cart);
+        }
+
+        public IEnumerable<CartItem> GetAllCartItem()
+        {
+            return context.CartItems.ToList();
+
+        }
+
+        public void RemoveAll()
+        {
+            context.CartItems.RemoveRange(GetAllCartItem());
         }
 
         // public void Update(CartItem cart)

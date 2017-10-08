@@ -7,12 +7,14 @@ namespace EcommerceApplication2.Service.Interface
     public interface ICartItemRepository
     {
         Task<IEnumerable<CartItem>> GetAll();
+        IEnumerable<CartItem> GetAllCartItem();
 
         Task<CartItem> GetById(int id);
 
         void Insert(CartItem cart);//Insert & Add the samething
 
         void Remove(CartItem cart);
+        void RemoveAll();
 
         //void Update(CartItem cart);//Look up async update/edit
 
