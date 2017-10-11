@@ -41,6 +41,7 @@ namespace EcommerceApplication2
             services.AddScoped<IPictureRepository, PictureRepository>();
             services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped<ICategoryRepository, CategoryRepository>();
+            services.AddScoped<ICartItemRepository, CartItemRepository>();
             services.AddTransient<IPictureService, PictureService>();
             services.AddTransient<IPictureStorage, PictureStorage>();
         }
